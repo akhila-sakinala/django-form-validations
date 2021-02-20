@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This is a basic form without Css, we mainly concentrate on form validations.</h2>
+    <form action="post" method="post">
+        <!-- form code goes here  -->
+        {{form_obj}}
+        <!-- csrf token is used by django for security  -->
+        {% csrf_token %}
+        <input type="submit" value="submit">
+    </form>
+    {% if form_data %}
+    <div>
+        <p>Name : {{form_data.name}}</p>
+        <p>Email : {{form_data.email}}</p>
+    </div>
+    {% endif %}
+    
+</body>
+</html>
